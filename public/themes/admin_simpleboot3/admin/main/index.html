@@ -7,10 +7,11 @@
             </div>
             <div class="panel-body home-info">
                 <ul class="list-unstyled">
-                    <li><em>官网</em> <span><a href="http://www.thinkcmf.com" target="_blank">www.thinkcmf.com</a></span>
+                    <li>
+                        <em>官网</em> <span><a href="http://www.thinkcmf.com" target="_blank">www.thinkcmf.com</a></span>
                     </li>
                     <li><em>QQ 群</em> <span>100828313,316669417</span></li>
-                    <li><em>联系邮箱</em> <span>thinkcmf@126.com</span></li>
+                    <li><em>联系邮箱</em> <span>catman@thinkcmf.com</span></li>
                 </ul>
             </div>
         </div>
@@ -276,7 +277,7 @@
     }
 
     //获取官方通知
-    $.getJSON("http://www.thinkcmf.com/service/sms_jsonp.php?lang={$lang_set}&v={$thinkcmf_version}&callback=?",
+    $.getJSON("//www.thinkcmf.com/service/sms_jsonp.php?lang={$lang_set}&v={$thinkcmf_version}&callback=?",
         function (data) {
             var tpl      = '<li><em class="title"></em><span class="content"></span></li>';
             var $notices = $("#thinkcmf-notices");
