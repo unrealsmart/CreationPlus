@@ -13,6 +13,7 @@
     <link href="__TMPL__/public/assets/themes/{:cmf_get_admin_style()}/bootstrap.min.css" rel="stylesheet">
     <link href="__STATIC__/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="__TMPL__/public/assets/themes/{:cmf_get_admin_style()}/login.css" rel="stylesheet">
+    <link href="__STATIC__/css/style.css" rel="stylesheet" type="text/css">
     <!--[if lt IE 9]>
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -31,7 +32,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
-                <h1 class="text-center">ThinkCMF</h1>
+                <h1 class="text-center font-face" style="margin-bottom: 30px;">创作+</h1>
                 <form class="js-ajax-form" action="{:url('public/doLogin')}" method="post">
                     <div class="form-group">
                         <input type="text" id="input_username" class="form-control" name="username"

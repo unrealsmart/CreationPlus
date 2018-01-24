@@ -1,0 +1,30 @@
+// source : main.html
+.navbar-brand {
+  &:hover, &:active, &:focus {
+    color: #fff !important;
+  }
+}
+
+#loading {
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+#task-content {
+  height: 48px;
+  max-height: 48px;
+  color: #fff;
+  & .openapp {
+    height: 100%;
+    display: flex;
+    padding: 0 1.5rem;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease-in-out;
+    &:hover, &:focus, &:active, &.active {
+      background-color: #1a334c;
+      cursor: pointer;
+    }
+  }
+}

@@ -41,8 +41,7 @@ $(function () {
     });
 
     $("#task-next").click(function () {
-        var marginLeft   = $taskContentInner.css("margin-left");
-        marginLeft       = marginLeft.replace("px", "");
+        var marginLeft   = parseInt($taskContentInner.css("margin-left"));
         var contentInner = $("#task-content-inner").width();
         var contentWidth = $("#task-content").width();
         var lessWidth    = contentWidth - contentInner;
@@ -50,6 +49,7 @@ $(function () {
 
         $taskContentInner.stop();
         $taskContentInner.animate({"margin-left": marginLeft + "px"}, 300, 'swing');
+        window.location.reload();
     });
 
     $("#task-pre").click(function () {
