@@ -12,6 +12,9 @@ class AdminCategoryController extends AdminBaseController
 
     public function add()
     {
-
+        $this->assign('categories_tree', '');
+        $this->assign('list_theme_files', []);
+        $this->assign('article_theme_files', []);
+        return $this->fetch();
     }
 }

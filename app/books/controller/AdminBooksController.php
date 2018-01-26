@@ -10,4 +10,10 @@ class AdminBooksController extends AdminBaseController
         $this->assign('articles', []);
         return $this->fetch();
     }
+
+    public function add()
+    {
+        $this->assign('article_theme_files', []);
+        return $this->fetch();
+    }
 }
