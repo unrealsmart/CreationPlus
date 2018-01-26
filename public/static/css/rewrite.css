@@ -20,5 +20,8 @@
     #task-content .openapp:hover, #task-content .openapp:focus, #task-content .openapp:active, #task-content .openapp.active {
       background-color: #1a334c;
       cursor: pointer; }
+  #task-content .cmf-component-tab {
+    max-width: 101px;
+    overflow: hidden; }
 
 /*# sourceMappingURL=rewrite.css.map */
