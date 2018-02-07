@@ -23,7 +23,6 @@
                             <div>
                                 <select class="form-control" name="parent_id" id="input-parent">
                                     <option value="0">作为一级分类</option>
-                                    {$categories_tree}
                                 </select>
                             </div>
                         </div>
@@ -74,21 +73,21 @@
                             <label for="input-list_tpl"><span class="form-required">*</span>列表模板</label>
                             <div>
                                 <select class="form-control" name="list_tpl" id="input-list_tpl">
-                                    <!--<option value="list">portal/list.html(默认)</option>-->
+                                    <!--<option value="list">books/list.html(默认)</option>-->
                                     <foreach name="list_theme_files" item="vo">
-                                        <php>$value=preg_replace('/^portal\//','',$vo['file']);</php>
+                                        <php>$value=preg_replace('/^books\//','',$vo['file']);</php>
                                         <option value="{$value}">{$vo.name} {$vo.file}.html</option>
                                     </foreach>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="input-one_tpl"><span class="form-required">*</span>文章模板</label>
+                            <label for="input-one_tpl"><span class="form-required">*</span>书籍模板</label>
                             <div>
                                 <select class="form-control" name="one_tpl" id="input-one_tpl">
-                                    <!--<option value="article">portal/article.html(默认)</option>-->
-                                    <foreach name="article_theme_files" item="vo">
-                                        <php>$value=preg_replace('/^portal\//','',$vo['file']);</php>
+                                    <!--<option value="article">books/article.html(默认)</option>-->
+                                    <foreach name="books_theme_files" item="vo">
+                                        <php>$value=preg_replace('/^books\//','',$vo['file']);</php>
                                         <option value="{$value}">{$vo.name} {$vo.file}.html</option>
                                     </foreach>
                                 </select>

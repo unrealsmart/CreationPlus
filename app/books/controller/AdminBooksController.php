@@ -1,19 +1,29 @@
 <?php
+
 namespace app\books\controller;
 
-use cmf\controller\AdminBaseController as AdminBaseController;
+use app\admin\model\ThemeModel;
+use app\books\model\BooksModel;
+use cmf\controller\AdminBaseController;
 
 class AdminBooksController extends AdminBaseController
 {
     public function index()
     {
-        $this->assign('articles', []);
+        $categoryId = input('post.category/d');
+
+        $booksModel = new BooksModel();
+        $data = $booksModel->adminBookLists();
+
+        $this->assign('books', $data);
         return $this->fetch();
     }
 
     public function add()
     {
-        $this->assign('article_theme_files', []);
+        $themeModel        = new ThemeModel();
+        $booksThemeFiles = $themeModel->getActionThemeFiles('books/Books/index');
+        $this->assign('books_theme_files', $booksThemeFiles);
         return $this->fetch();
     }
 }

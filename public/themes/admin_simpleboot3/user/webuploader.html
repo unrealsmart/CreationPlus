@@ -1,7 +1,12 @@
 <include file="public@header"/>
 <link rel="stylesheet" type="text/css" href="__ROOT__/static/js/webuploader/webuploader.css">
 <link rel="stylesheet" type="text/css" href="__ROOT__/static/js/webuploader/image-upload/style.css">
+<link rel="stylesheet" type="text/css" href="__ROOT__/static/css/style.css">
 <style>
+    body {
+        font-size: 0.875rem;
+        overflow: hidden;
+    }
     .state-complete .progress {
         display: none;
     }
@@ -18,6 +23,14 @@
     #uploader .statusBar .info {
         line-height: 1.2 !important;
         vertical-align: middle;
+    }
+
+    #uploader .placeholder, #uploader .placeholder .webuploader-pick {
+        font-size: 0.875rem;
+    }
+
+    #uploader .placeholder .webuploader-pick {
+        line-height: 35px;
     }
 </style>
 </head>
@@ -63,11 +76,12 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane" id="B"> 请输入网络地址
+            <div class="tab-pane" id="B" style="padding: 1rem;">
+                <div style="margin-bottom: 0.5rem;">请输入网络地址</div>
                 <div class="bk3"></div>
                 <input type="hidden" id="img_name" value="">
                 <input type="text" id="info" name="info[filename]" class="input form-control" value=""
-                       style="width:600px;" placeholder="http://">
+                       style="max-width:600px;" placeholder="http://">
             </div>
             <div class="tab-pane" id="explorer">
                 <div class="bk3"></div>

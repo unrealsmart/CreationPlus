@@ -16,22 +16,29 @@
 						<th width="50">排序</th>
 						<th width="50">ID</th>
 						<th>分类名称</th>
-						<th>描述</th>
 						<th width="180">操作</th>
 					</tr>
 				</thead>
 				<tbody>
-
+					<volist name="category_tree" id="vo">
+						<tr>
+							<td></td>
+							<td>{$vo.id}</td>
+							<td>
+								<gt name="vo['deep']" value="0">
+									├<for start="0" end="$vo.deep">─</for> {$vo.name}
+									<else/>
+									{$vo.name}
+								</gt>
+							</td>
+							<td>
+								<a href="">编辑</a>
+								<a href="">{$vo.status ? '禁用' : '启用'}</a>
+								<a href="">删除</a>
+							</td>
+						</tr>
+					</volist>
 				</tbody>
-				<tfoot>
-					<tr>
-						<th width="50">排序</th>
-						<th width="50">ID</th>
-						<th>分类名称</th>
-						<th>描述</th>
-						<th width="180">操作</th>
-					</tr>
-				</tfoot>
 			</table>
 			<div class="table-actions">
 				<button type="submit" class="btn btn-primary btn-sm js-ajax-submit">{:lang('SORT')}</button>

@@ -33,4 +33,14 @@ body, pre, .tooltip, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 a, a:hover, a:focus, a:active, a.active {
   text-decoration: none !important;
+  outline: none;
+}
+
+.main-container {
+  & .sidebar {
+    width: 256px;
+  }
+  & .main-content {
+    margin-left: 256px;
+  }
 }

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>首页 {$site_info.site_name|default=''}</title>
+    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+    <meta name="description" content="{$site_info.site_seo_description|default=''}">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="__TMPL__/public/assets/images/favicon.png" type="image/png">
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/Swiper/4.1.0/css/swiper.min.css" rel="stylesheet">
+    <link href="/themes/simpleboot3/books/assets/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="app">
+    <include file="books@topbar" />
+    <include file="books@header" />
+    <div class="frame container ml-auto mr-auto d-flex flex-column flex-md-row mt-4">
+        <div class="navigation d-flex flex-row flex-md-column mb-3">
+            <a href="" class="active">全部</a>
+            <a href="">小说</a>
+        </div>
+        <div class="content pl-4 pr-4">
+            <div class="swiper d-flex flex-row mb-2">
+                <div class="swiper-cover swiper-container h-100">
+                    <div class="swiper-wrapper swiper-no-swiping">
+                        <a href="#" class="swiper-slide w-100">
+                            <img src="/themes/simpleboot3/books/assets/img/swiper.png" alt="" class="d-block h-100" />
+                        </a>
+                        <a href="#" class="swiper-slide w-100">
+                            1
+                        </a>
+                        <a href="#" class="swiper-slide w-100">
+                            <img src="/themes/simpleboot3/books/assets/img/swiper.png" alt="" class="d-block h-100" />
+                        </a>
+                        <a href="#" class="swiper-slide w-100">
+                            3
+                        </a>
+                        <a href="#" class="swiper-slide w-100">
+                            <img src="/themes/simpleboot3/books/assets/img/swiper.png" alt="" class="d-block h-100" />
+                        </a>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <div class="item active">活动</div>
+                    <div class="item">活动</div>
+                    <div class="item">活动</div>
+                    <div class="item">活动</div>
+                    <div class="item">活动</div>
+                </div>
+            </div>
+            <div class="tab-root container-full">
+                <div class="tab d-flex">
+                    <a href="" class="item active">全部作品</a>
+                    <a href="" class="item">创作中</a>
+                    <a href="" class="item">完本</a>
+                    <div class="after"></div>
+                </div>
+                <div class="tab-container">
+                    <div class="tab-item">
+                        1111
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="info">info</div>
+    </div>
+</div>
+<div class="javascript">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/Swiper/4.1.0/js/swiper.min.js"></script>
+    <script type="text/javascript">
+        //
+        $(function() {
+            /* content */
+            /* content - swiper - [swiper-cover & thumbnail] */
+            var mySwiper = new Swiper ('.swiper-cover', {
+                autoplay: {
+                    delay: 5000,
+                    stopOnLastSlide: false,
+                    disableOnInteraction: true,
+                },
+                effect: 'fade',
+                on: {
+                    slideChange: function() {
+                        var $thumbnail = $($(this)[0].$el).parent().find('.thumbnail');
+                        $thumbnail.find('.item').removeClass('active');
+                        $thumbnail.find('.item').eq($(this)[0].realIndex).addClass('active');
+                    }
+                }
+            });
+            $('.swiper .thumbnail .item').on('touch mouseover', function(e) {
+                var $this = $(e.target);
+                $this.parent().find('.item').removeClass('active');
+                $this.addClass('active');
+                mySwiper.slideTo($this.index())
+            });
+
+            /* tab */
+            /* tab-root item initial active */
+            $('.tab-root .tab .after').width($('.tab-root .tab .item.active').width());
+
+            /* tab root item switch event */
+            $('.tab-root .tab .item').on('touch mouseover', function(e) {
+                if (!$(e.target).hasClass('active')) {
+                    // width
+                    $('.tab-root .tab .after').css({
+                        width: $(this).width()
+                    });
+                    // left
+                    $('.tab-root .tab .after').animate({
+                        left: $(this)[0].offsetLeft + parseInt($(this).css('padding-left'))
+                    }, 300);
+                }
+            });
+            $('.tab-root .tab .item').on('touch mouseover', function(e) {
+
+            });
+        });
+    </script>
+</div>
+</body>
+</html>

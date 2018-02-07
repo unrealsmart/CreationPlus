@@ -29,17 +29,17 @@
 <body>
 <div class="wrap js-check-wrap">
     <ul class="nav nav-tabs">
-        <li><a href="{:url('AdminArticle/index')}">文章管理</a></li>
-        <li class="active"><a href="{:url('AdminArticle/add')}">添加文章</a></li>
+        <li><a href="{:url('AdminBooks/index')}">书籍管理</a></li>
+        <li class="active"><a href="{:url('AdminBooks/add')}">添加书籍</a></li>
     </ul>
-    <form action="{:url('AdminArticle/addPost')}" method="post" class="form-horizontal js-ajax-form margin-top-20">
+    <form action="{:url('AdminBooks/addPost')}" method="post" class="form-horizontal js-ajax-form margin-top-20">
         <div class="row">
             <div class="col-md-9">
                 <table class="table table-bordered">
                     <tr>
                         <th width="100">分类<span class="form-required">*</span></th>
                         <td>
-                            <input class="form-control" type="text" style="width:400px;" required value=""
+                            <input class="form-control" type="text" required value=""
                                    placeholder="请选择分类" onclick="doSelectCategory();" id="js-categories-name-input"
                                    readonly/>
                             <input class="form-control" type="hidden" value="" name="post[categories]"
@@ -47,78 +47,77 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>标题<span class="form-required">*</span></th>
+                        <th>书名<span class="form-required">*</span></th>
                         <td>
-                            <input class="form-control" type="text" name="post[post_title]"
-                                   id="title" required value="" placeholder="请输入标题"/>
+                            <input class="form-control" type="text" name="post[post_name]"
+                                   id="title" required value="" placeholder="请输入书名"/>
                         </td>
                     </tr>
                     <tr>
-                        <th>关键词</th>
+                        <th>标签</th>
                         <td>
-                            <input class="form-control" type="text" name="post[post_keywords]" id="keywords" value=""
-                                   placeholder="请输入关键字">
-                            <p class="help-block">多关键词之间用英文逗号隔开</p>
+                            <input class="form-control" type="text" required value=""
+                                   placeholder="请选择标签" onclick="doSelectTags();" id="js-tag-name-input"
+                                   readonly/>
+                            <input class="form-control" type="hidden" value="" name="post[post_tags]"
+                                   id="js-tag-id-input"/>
                         </td>
                     </tr>
                     <tr>
-                        <th>文章来源</th>
-                        <td><input class="form-control" type="text" name="post[post_source]" id="source" value=""
-                                   placeholder="请输入文章来源"></td>
-                    </tr>
-                    <tr>
-                        <th>摘要</th>
+                        <th>创作初心</th>
                         <td>
-                            <textarea class="form-control" name="post[post_excerpt]" style="height: 50px;"
-                                      placeholder="请填写摘要"></textarea>
+                            <textarea class="form-control" name="post[post_desire]" style="height: 80px; resize: none"
+                                      placeholder="请填写创作初心"></textarea>
                         </td>
                     </tr>
                     <tr>
-                        <th>内容</th>
+                        <th>书籍简介</th>
                         <td>
-                            <script type="text/plain" id="content" name="post[post_content]"></script>
+                            <textarea class="form-control" name="post[post_content]" style="height: 120px; resize: none"
+                                      placeholder="请填写作品简介"></textarea>
                         </td>
                     </tr>
                     <tr>
-                        <th>相册</th>
+                        <th>书籍进度</th>
                         <td>
-                            <ul id="photos" class="pic-list list-unstyled form-inline"></ul>
-                            <a href="javascript:uploadMultiImage('图片上传','#photos','photos-item-tpl');"
-                               class="btn btn-default btn-sm">选择图片</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>附件</th>
-                        <td>
-                            <ul id="files" class="pic-list list-unstyled form-inline">
-                            </ul>
-                            <a href="javascript:uploadMultiFile('附件上传','#files','files-item-tpl','file');"
-                               class="btn btn-sm btn-default">选择文件</a>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="post[post_progress]" value="1" checked /> 连载
+                                </label>
+                                <label>
+                                    <input type="radio" name="post[post_progress]" value="0" /> 停更
+                                </label>
+                                <label>
+                                    <input type="radio" name="post[post_progress]" value="2" /> 完结
+                                </label>
+                            </div>
                         </td>
                     </tr>
                 </table>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <button type="submit" class="btn btn-primary js-ajax-submit">{:lang('ADD')}</button>
-                        <a class="btn btn-default" href="{:url('AdminArticle/index')}">{:lang('BACK')}</a>
+                        <a class="btn btn-default" href="{:url('AdminBooks/index')}">{:lang('BACK')}</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <table class="table table-bordered">
                     <tr>
-                        <th><b>缩略图</b></th>
+                        <th><b>封面</b></th>
                     </tr>
                     <tr>
                         <td>
                             <div style="text-align: center;">
                                 <input type="hidden" name="post[more][thumbnail]" id="thumbnail" value="">
-                                <a href="javascript:uploadOneImage('图片上传','#thumbnail');">
+                                <a href="javascript:uploadOneImage('上传封面','#thumbnail');">
                                     <img src="__TMPL__/public/assets/images/default-thumbnail.png"
                                          id="thumbnail-preview"
-                                         width="135" style="cursor: pointer"/>
+                                         width="144" height="192" style="cursor: pointer"/>
                                 </a>
-                                <input type="button" class="btn btn-sm btn-cancel-thumbnail" value="取消图片">
+                                <div>
+                                    <input type="button" class="btn btn-sm btn-cancel-thumbnail" style="margin-top: 0.75rem;" value="删除封面">
+                                </div>
                             </div>
                         </td>
                     </tr>
@@ -156,13 +155,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>文章模板</th>
+                        <th>书籍模板</th>
                     </tr>
                     <tr>
                         <td>
                             <select class="form-control" name="post[more][template]" id="more-template-select">
                                 <option value="">请选择模板</option>
-                                <foreach name="article_theme_files" item="vo">
+                                <foreach name="books_theme_files" item="vo">
                                     <php>$value=preg_replace('/^portal\//','',$vo['file']);</php>
                                     <option value="{$value}">{$vo.name} {$vo.file}.html</option>
                                 </foreach>
@@ -214,6 +213,27 @@
                 }
                 $('#js-categories-id-input').val(selectedCategories.selectedCategoriesId.join(','));
                 $('#js-categories-name-input').val(selectedCategories.selectedCategoriesName.join(' '));
+                //console.log(layer.getFrameIndex(index));
+                layer.close(index); //如果设定了yes回调，需进行手工关闭
+            }
+        });
+    }
+
+    function doSelectTags() {
+        var selectedTagId = $('#js-tag-id-input').val();
+        openIframeLayer("{:url('AdminTag/select')}?ids=" + selectedTagId, '请选择标签', {
+            area: ['700px', '400px'],
+            btn: ['确定', '取消'],
+            yes: function (index, layero) {
+                //do something
+                var iframeWin          = window[layero.find('iframe')[0]['name']];
+                var selectedTag = iframeWin.confirm();
+                if (selectedTag.selectedTagsId.length == 0) {
+                    layer.msg('请选择标签');
+                    return;
+                }
+                $('#js-tag-id-input').val(selectedTag.selectedTagsId.join(','));
+                $('#js-tag-name-input').val(selectedTag.selectedTagsName.join(' '));
                 //console.log(layer.getFrameIndex(index));
                 layer.close(index); //如果设定了yes回调，需进行手工关闭
             }

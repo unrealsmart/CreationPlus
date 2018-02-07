@@ -15,4 +15,6 @@ if (file_exists(CMF_ROOT . "data/conf/route.php")) {
     $runtimeRoutes = [];
 }
 
+$runtimeRoutes['main'] = 'books/index/main';
+
 return $runtimeRoutes;
