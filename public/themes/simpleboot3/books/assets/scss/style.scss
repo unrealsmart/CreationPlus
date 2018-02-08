@@ -2,6 +2,9 @@
 $header-height: 68;
 $max-width: 1100px;
 
+$nav-width: 100px;
+$info-width: 322px;
+
 body {
     font-family: 'Microsoft YaHei';
 }
@@ -23,6 +26,12 @@ a:active
     text-decoration: none;
 }
 
+input,
+select,
+button {
+    box-shadow: none !important;
+}
+
 .btn-crate-white {
     font-size: 0.875rem;
     border: 2px solid white;
@@ -38,6 +47,44 @@ a:active
     padding: 0.5rem 2rem;
     box-sizing: border-box;
 }
+
+.btn-deep-blue {
+    color: #eee;
+    font-size: 0.875rem;
+    background-color: #017EC6;
+}
+
+.tag {
+    font-size: 0.625rem;
+    display: inline-block;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    padding: 0.15rem 1rem;
+    margin: 0 0.2rem;
+    &:first-child {
+        margin-left: 0;
+    }
+    &.tag-dark {
+        border-color: #333;
+        color: #333;
+    }
+    &.tag-light-blue {
+        border-color: #2bc0ac;
+        color: #2bc0ac;
+    }
+    &.tag-pick {
+        border-color: #cc91a9;
+        color: #cc91a9;
+    }
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+
+/* user custom style */
 
 .guide {
     background-image: url('/themes/simpleboot3/books/assets/img/bg.jpg');
@@ -108,10 +155,10 @@ a:active
     max-width: $max-width;
 
     & .navigation {
-        min-width: 135px;
+        min-width: $nav-width;
         & a {
             display: inline-block;
-            padding: 0.65rem 1rem;
+            padding: 0.55rem 1rem;
             text-align: center;
             width: 100%;
             &:hover, &:focus, &:active, &.active {
@@ -122,15 +169,15 @@ a:active
     }
 
     & .content {
-
+        width: $max-width - (15 * 2) - $nav-width - $info-width;
         /*  content - swiper */
         & .swiper {
             height: 200px;
             overflow: hidden;
             & .swiper-cover {
-                width: 555px;
                 & .swiper-slide {
                     display: block;
+                    width: 555.2px;
                     background-color: #fff;
                 }
             }
@@ -138,8 +185,10 @@ a:active
                 width: 75px;
                 color: #fff;
                 & .item {
+                    width: 75px;
                     text-align: center;
-                    padding: 0.6rem;
+                    padding: 0.567rem;
+                    border-bottom: 1px solid #ccc;
                     background-color: #999;
                     position: relative;
                     z-index: 7;
@@ -168,15 +217,17 @@ a:active
 
         /* content - tab */
         & .tab-root {
+            /* tab */
             & .tab {
+                letter-spacing: 1px;
                 position: relative;
-                border-bottom: 2px solid #dddddd;
+                border-bottom: 2px solid #ccc;
                 & a {
                     display: inline-block;
                     font-size: 1.05rem;
                     font-weight: 500;
                     color: #000;
-                    padding: 1rem 1.5rem;
+                    padding: 1rem 2.3rem;
                     position: relative;
                     &:first-child {
                         padding-left: 0;
@@ -191,6 +242,50 @@ a:active
                     background-color: #2bc0ac;
                 }
             }
+            /* tab container */
+            & .tab-container {
+                & .tab-items {
+                    & .item {
+                        padding: 1.5rem 0;
+                        border-bottom: 2px solid #eee;
+                        overflow: hidden;
+                        transition: all 0.15s ease-in-out;
+                        & .cover {
+                            width: 259px;
+                        }
+                        & .detail {
+                            & .title {
+                                color: #000;
+                                font-size: 1.1rem;
+                                letter-spacing: 1px;
+                            }
+                            & .tags {
+                                margin: 0.25rem 0;
+                            }
+                            & .info {
+                                color: #666;
+                                font-size: 0.875rem;
+                                height: 42px;
+                                margin: 0.25rem 0;
+                                padding-right: 1.5rem;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+                        }
+                        & .author-datetime {
+                            color: #999;
+                            font-size: 0.8125rem;
+                            & img {
+                                width: 22px;
+                            }
+                        }
+                        &:hover, &:focus, &:active, &.active {
+                            cursor: pointer;
+                            background-color: rgba(43, 192, 172, 0.05);
+                        }
+                    }
+                }
+            }
         }
 
         /*  */
@@ -198,5 +293,41 @@ a:active
 
     & .info {
         width: 300px;
+        & .search {
+            & .form-control {
+                color: #333;
+                border: none;
+                background-color: #efefef;
+                padding: 0.5rem 1rem;
+            }
+            & .btn {
+                font-size: 0.875rem;
+                border-left: none;
+                letter-spacing: 2px;
+                padding: 0.5rem 1.5rem;
+            }
+        }
+        & .user-info {
+            height: 200px;
+            background-color: #eee;
+            & .detail {
+                border-radius: 3px;
+                & .user-head {
+                    & img {
+                        width: 50px;
+                    }
+                }
+                & .creation {
+                    & .title {
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                    }
+                    & .sub-title {
+                        font-size: 0.625rem;
+                        color: #999;
+                    }
+                }
+            }
+        }
     }
 }

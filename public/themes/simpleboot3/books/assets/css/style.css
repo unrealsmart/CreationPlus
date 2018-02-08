@@ -14,6 +14,11 @@ a:focus,
 a:active {
   text-decoration: none; }
 
+input,
+select,
+button {
+  box-shadow: none !important; }
+
 .btn-crate-white {
   font-size: 0.875rem;
   border: 2px solid white;
@@ -28,6 +33,35 @@ a:active {
   padding: 0.5rem 2rem;
   box-sizing: border-box; }
 
+.btn-deep-blue {
+  color: #eee;
+  font-size: 0.875rem;
+  background-color: #017EC6; }
+
+.tag {
+  font-size: 0.625rem;
+  display: inline-block;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  padding: 0.15rem 1rem;
+  margin: 0 0.2rem; }
+  .tag:first-child {
+    margin-left: 0; }
+  .tag.tag-dark {
+    border-color: #333;
+    color: #333; }
+  .tag.tag-light-blue {
+    border-color: #2bc0ac;
+    color: #2bc0ac; }
+  .tag.tag-pick {
+    border-color: #cc91a9;
+    color: #cc91a9; }
+
+.bg-white {
+  background-color: #fff; }
+
+/* user custom style */
 .guide {
   background-image: url("/themes/simpleboot3/books/assets/img/bg.jpg");
   background-size: cover; }
@@ -78,33 +112,35 @@ a:active {
   .frame a {
     color: #333; }
   .frame .navigation {
-    min-width: 135px; }
+    min-width: 100px; }
     .frame .navigation a {
       display: inline-block;
-      padding: 0.65rem 1rem;
+      padding: 0.55rem 1rem;
       text-align: center;
       width: 100%; }
       .frame .navigation a:hover, .frame .navigation a:focus, .frame .navigation a:active, .frame .navigation a.active {
         color: #fff;
         background-color: #2bc0ac; }
   .frame .content {
+    width: 648px;
     /*  content - swiper */
     /* content - tab */
     /*  */ }
     .frame .content .swiper {
       height: 200px;
       overflow: hidden; }
-      .frame .content .swiper .swiper-cover {
-        width: 555px; }
-        .frame .content .swiper .swiper-cover .swiper-slide {
-          display: block;
-          background-color: #fff; }
+      .frame .content .swiper .swiper-cover .swiper-slide {
+        display: block;
+        width: 555.2px;
+        background-color: #fff; }
       .frame .content .swiper .thumbnail {
         width: 75px;
         color: #fff; }
         .frame .content .swiper .thumbnail .item {
+          width: 75px;
           text-align: center;
-          padding: 0.6rem;
+          padding: 0.567rem;
+          border-bottom: 1px solid #ccc;
           background-color: #999;
           position: relative;
           z-index: 7; }
@@ -124,26 +160,82 @@ a:active {
               border-color: transparent #2bc0ac transparent transparent; }
           .frame .content .swiper .thumbnail .item:hover, .frame .content .swiper .thumbnail .item:active, .frame .content .swiper .thumbnail .item:focus {
             cursor: pointer; }
-    .frame .content .tab-root .tab {
-      position: relative;
-      border-bottom: 2px solid #dddddd; }
-      .frame .content .tab-root .tab a {
-        display: inline-block;
-        font-size: 1.05rem;
-        font-weight: 500;
-        color: #000;
-        padding: 1rem 1.5rem;
-        position: relative; }
-        .frame .content .tab-root .tab a:first-child {
-          padding-left: 0; }
-      .frame .content .tab-root .tab .after {
-        width: auto;
-        height: 2px;
-        position: absolute;
-        bottom: -2px;
-        display: inline-block;
-        background-color: #2bc0ac; }
+    .frame .content .tab-root {
+      /* tab */
+      /* tab container */ }
+      .frame .content .tab-root .tab {
+        letter-spacing: 1px;
+        position: relative;
+        border-bottom: 2px solid #ccc; }
+        .frame .content .tab-root .tab a {
+          display: inline-block;
+          font-size: 1.05rem;
+          font-weight: 500;
+          color: #000;
+          padding: 1rem 2.3rem;
+          position: relative; }
+          .frame .content .tab-root .tab a:first-child {
+            padding-left: 0; }
+        .frame .content .tab-root .tab .after {
+          width: auto;
+          height: 2px;
+          position: absolute;
+          bottom: -2px;
+          display: inline-block;
+          background-color: #2bc0ac; }
+      .frame .content .tab-root .tab-container .tab-items .item {
+        padding: 1.5rem 0;
+        border-bottom: 2px solid #eee;
+        overflow: hidden;
+        transition: all 0.15s ease-in-out; }
+        .frame .content .tab-root .tab-container .tab-items .item .cover {
+          width: 259px; }
+        .frame .content .tab-root .tab-container .tab-items .item .detail .title {
+          color: #000;
+          font-size: 1.1rem;
+          letter-spacing: 1px; }
+        .frame .content .tab-root .tab-container .tab-items .item .detail .tags {
+          margin: 0.25rem 0; }
+        .frame .content .tab-root .tab-container .tab-items .item .detail .info {
+          color: #666;
+          font-size: 0.875rem;
+          height: 42px;
+          margin: 0.25rem 0;
+          padding-right: 1.5rem;
+          overflow: hidden;
+          text-overflow: ellipsis; }
+        .frame .content .tab-root .tab-container .tab-items .item .author-datetime {
+          color: #999;
+          font-size: 0.8125rem; }
+          .frame .content .tab-root .tab-container .tab-items .item .author-datetime img {
+            width: 22px; }
+        .frame .content .tab-root .tab-container .tab-items .item:hover, .frame .content .tab-root .tab-container .tab-items .item:focus, .frame .content .tab-root .tab-container .tab-items .item:active, .frame .content .tab-root .tab-container .tab-items .item.active {
+          cursor: pointer;
+          background-color: rgba(43, 192, 172, 0.05); }
   .frame .info {
     width: 300px; }
+    .frame .info .search .form-control {
+      color: #333;
+      border: none;
+      background-color: #efefef;
+      padding: 0.5rem 1rem; }
+    .frame .info .search .btn {
+      font-size: 0.875rem;
+      border-left: none;
+      letter-spacing: 2px;
+      padding: 0.5rem 1.5rem; }
+    .frame .info .user-info {
+      height: 200px;
+      background-color: #eee; }
+      .frame .info .user-info .detail {
+        border-radius: 3px; }
+        .frame .info .user-info .detail .user-head img {
+          width: 50px; }
+        .frame .info .user-info .detail .creation .title {
+          font-size: 1.2rem;
+          font-weight: bold; }
+        .frame .info .user-info .detail .creation .sub-title {
+          font-size: 0.625rem;
+          color: #999; }
 
 /*# sourceMappingURL=style.css.map */
