@@ -1,0 +1,25 @@
+
+.select {
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    line-height: 1.5;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        cursor: pointer;
+        border-color: #2bc0ac;
+    }
+    & .options {
+        & .option {
+            padding: .375rem .75rem;
+            display: none;
+            &:first-child {
+                display: block !important;
+            }
+        }
+    }
+}

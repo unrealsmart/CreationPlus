@@ -1,0 +1,86 @@
+
+.tab-root {
+    /* tab */
+    & .tab {
+        display: flex;
+        letter-spacing: 1px;
+        position: relative;
+        border-bottom: 2px solid #ccc;
+        & .items {
+            & .item {
+                display: inline-block;
+                font-size: 1.05rem;
+                font-weight: 500;
+                color: #000;
+                padding: 1rem 2.3rem;
+                position: relative;
+                &:first-child {
+                    padding-left: 0;
+                }
+                &:last-child {
+                    padding-right: 0;
+                }
+                &:hover,
+                &:focus,
+                &:active,
+                &.active {
+                    cursor: pointer;
+                }
+            }
+        }
+        & .after {
+            width: auto;
+            height: 2px;
+            position: absolute;
+            bottom: -2px;
+            display: inline-block;
+            background-color: #2bc0ac;
+        }
+    }
+
+    /* content */
+    & .content {
+        & .tab-items {
+            display: none;
+            &:first-child {
+                display: block;
+            }
+            & .item {
+                padding: 1.5rem 0;
+                border-bottom: 2px solid #eee;
+                overflow: hidden;
+                transition: all 0.15s ease-in-out;
+                &:hover, &:focus, &:active, &.active {
+                    cursor: pointer;
+                    background-color: rgba(43, 192, 172, 0.05);
+                }
+            }
+        }
+    }
+}
+
+/* 其他类型 */
+.tab-vertical {
+    & .tab {
+        border-bottom: none;
+        border-left: 2px solid transparent;
+        padding: 1rem 0;
+        & .items {
+            & .item {
+                &:first-child {
+                    padding: 0.5rem 1rem;
+                }
+                width: 100%;
+                font-size: 0.875rem;
+                font-weight: normal;
+                padding: 0.5rem 1rem;
+            }
+        }
+        & .after {
+            width: 2px;
+            bottom: auto;
+            left: -2px;
+            top: 0;
+        }
+    }
+}

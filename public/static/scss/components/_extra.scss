@@ -1,0 +1,24 @@
+.tag {
+    font-size: 0.625rem;
+    display: inline-block;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    padding: 0.15rem 1rem;
+    margin: 0 0.2rem;
+    &:first-child {
+        margin-left: 0;
+    }
+    &.tag-dark {
+        border-color: #333;
+        color: #333;
+    }
+    &.tag-light-blue {
+        border-color: #2bc0ac;
+        color: #2bc0ac;
+    }
+    &.tag-pick {
+        border-color: #cc91a9;
+        color: #cc91a9;
+    }
+}

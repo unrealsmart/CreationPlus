@@ -16,5 +16,18 @@ if (file_exists(CMF_ROOT . "data/conf/route.php")) {
 }
 
 $runtimeRoutes['main'] = 'books/index/main';
+$runtimeRoutes['author'] = 'books/index/author';
+$runtimeRoutes['activity'] = 'books/index/activity';
+
+// create controller
+$runtimeRoutes['create'] = 'books/create/index';
+
+// books controller
+$customRouter = [
+    '/books/:id' => 'books/books/index',
+];
+
+// runtime + custom
+$runtimeRoutes = array_merge($runtimeRoutes, $customRouter);
 
 return $runtimeRoutes;

@@ -1,0 +1,41 @@
+
+/* Rest Body */
+body {
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Max Container*/
+.max-container {
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
+/* 取消 a 链接下划线 */
+a {
+    transition: all 0.15s ease-in-out;
+    text-decoration: none;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active
+    {
+        text-decoration: none;
+    }
+}
+
+/* 控件 */
+input,
+select,
+textarea,
+button
+{
+    box-shadow: none !important;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active
+    {
+        border-color: #2bc0ac !important;
+    }
+}

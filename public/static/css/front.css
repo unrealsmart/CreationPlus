@@ -1,0 +1,369 @@
+@charset "UTF-8";
+/**
+ *  creation plus & front.scss
+ *  datetime: 2017-02-14 20:27:12
+ *
+ */
+/* Rest Body */
+body {
+  font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+  background-color: #f0f0f0; }
+
+/* Max Container*/
+.max-container {
+  max-width: 1100px;
+  margin: 0 auto; }
+
+/* 取消 a 链接下划线 */
+a {
+  transition: all 0.15s ease-in-out;
+  text-decoration: none; }
+  a:hover, a:focus, a:active, a.active {
+    text-decoration: none; }
+
+/* 控件 */
+input,
+select,
+textarea,
+button {
+  box-shadow: none !important; }
+  input:hover, input:focus, input:active, input.active,
+  select:hover,
+  select:focus,
+  select:active,
+  select.active,
+  textarea:hover,
+  textarea:focus,
+  textarea:active,
+  textarea.active,
+  button:hover,
+  button:focus,
+  button:active,
+  button.active {
+    border-color: #2bc0ac !important; }
+
+/*****************************/
+/*****************************/
+.guide-page .view {
+  background-image: url("/static/images/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .guide-page .view .cover {
+    background-color: rgba(0, 0, 0, 0.5); }
+  .guide-page .view .container {
+    max-width: 1100px;
+    height: 68px;
+    min-height: 68px; }
+    .guide-page .view .container img {
+      height: 28px; }
+  .guide-page .view .cover-top {
+    margin-top: 3rem;
+    font-size: 1.85rem;
+    font-weight: normal;
+    letter-spacing: 3px; }
+  .guide-page .view .cover-bottom {
+    padding: 0.5rem 2rem;
+    margin-top: 5rem;
+    margin-bottom: 20%; }
+
+.main {
+  font-size: 0.875rem;
+  max-width: 1100px; }
+  .main a {
+    color: #333; }
+  .main .navigation {
+    min-width: 100px; }
+    .main .navigation a {
+      display: inline-block;
+      padding: 0.55rem 1rem;
+      text-align: center;
+      width: 100%; }
+      .main .navigation a:hover, .main .navigation a:focus, .main .navigation a:active, .main .navigation a.active {
+        color: #fff;
+        background-color: #2bc0ac; }
+  .main .content-root {
+    width: 648px;
+    /*  content - swiper */
+    /* tab rewrite */ }
+    .main .content-root .swiper {
+      height: 200px;
+      overflow: hidden; }
+      .main .content-root .swiper .swiper-cover .swiper-slide {
+        display: block;
+        width: 555.2px;
+        background-color: #fff; }
+      .main .content-root .swiper .thumbnail {
+        width: 75px;
+        color: #fff; }
+        .main .content-root .swiper .thumbnail .item {
+          width: 75px;
+          text-align: center;
+          padding: 0.567rem;
+          border-bottom: 1px solid #ccc;
+          background-color: #999;
+          position: relative;
+          z-index: 7; }
+          .main .content-root .swiper .thumbnail .item.active {
+            background-color: #2bc0ac; }
+            .main .content-root .swiper .thumbnail .item.active:before {
+              width: 0;
+              height: 0;
+              display: block;
+              content: '';
+              position: absolute;
+              left: -7px;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              border-width: 7px;
+              border-style: solid;
+              border-color: transparent #2bc0ac transparent transparent; }
+          .main .content-root .swiper .thumbnail .item:hover, .main .content-root .swiper .thumbnail .item:active, .main .content-root .swiper .thumbnail .item:focus {
+            cursor: pointer; }
+    .main .content-root .content .tab-items .item .cover {
+      width: 259px; }
+    .main .content-root .content .tab-items .item .detail .title {
+      color: #000;
+      font-size: 1.1rem;
+      letter-spacing: 1px; }
+    .main .content-root .content .tab-items .item .detail .tags {
+      margin: 0.25rem 0; }
+    .main .content-root .content .tab-items .item .detail .info {
+      color: #666;
+      font-size: 0.875rem;
+      height: 42px;
+      margin: 0.25rem 0;
+      padding-right: 1.5rem;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+    .main .content-root .content .tab-items .item .author-datetime {
+      color: #999;
+      font-size: 0.8125rem; }
+      .main .content-root .content .tab-items .item .author-datetime img {
+        width: 22px; }
+  .main .info {
+    width: 300px;
+    /* 搜索 */
+    /* 用户 */
+    /* 榜单 */
+    /* 推荐 & 强推 */
+    /* 公共：标题 */ }
+    .main .info .search .form-control {
+      color: #333;
+      border: none;
+      background-color: #efefef;
+      padding: 0.5rem 1rem; }
+    .main .info .search .btn {
+      font-size: 0.875rem;
+      border-left: none;
+      letter-spacing: 2px;
+      padding: 0.5rem 1.5rem; }
+    .main .info .user-info {
+      height: 200px;
+      background-color: #eee; }
+      .main .info .user-info .detail {
+        border-radius: 3px; }
+        .main .info .user-info .detail .logout {
+          position: absolute;
+          right: 0;
+          top: 0;
+          display: inline-block;
+          padding: 0.5rem 1rem;
+          font-size: 0.625rem;
+          color: #ccc; }
+        .main .info .user-info .detail .user-head img {
+          width: 50px; }
+        .main .info .user-info .detail .creation .title {
+          font-size: 1.2rem;
+          font-weight: bold; }
+        .main .info .user-info .detail .creation .sub-title {
+          font-size: 0.625rem;
+          color: #999; }
+    .main .info .hot-list .items .item {
+      padding: 1.2rem 0;
+      font-size: 1rem; }
+      .main .info .hot-list .items .item img {
+        width: 24px; }
+    .main .info .push .items .item {
+      font-size: 0.625rem;
+      margin: 0.5rem 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #ddd; }
+      .main .info .push .items .item .item-content {
+        background-color: #ccc; }
+        .main .info .push .items .item .item-content span {
+          color: #666;
+          padding: 0.15rem 0.25rem; }
+        .main .info .push .items .item .item-content .col {
+          padding: 0.15rem 0.25rem;
+          background-color: #ddd; }
+    .main .info .hot-list, .main .info .push {
+      background-color: #eee;
+      border-top: 2px solid #2bc0ac; }
+    .main .info .title {
+      font-weight: 500;
+      font-size: 1rem;
+      color: #000;
+      letter-spacing: 1px; }
+      .main .info .title .number {
+        font-size: 1.1rem;
+        letter-spacing: 1px; }
+
+.btn-crate-white {
+  border: 2px solid white;
+  background-color: transparent;
+  padding: 0.5rem 2rem;
+  box-sizing: border-box; }
+
+.btn-create-blue {
+  background-color: #2bc0ac;
+  border: 2px solid #2bc0ac;
+  padding: 0.5rem 2rem;
+  box-sizing: border-box; }
+
+.btn-deep-blue {
+  color: #eee;
+  font-size: 0.875rem;
+  background-color: #017EC6; }
+
+.select {
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 3px;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  line-height: 1.5; }
+  .select:hover, .select:focus, .select:active, .select.active {
+    cursor: pointer;
+    border-color: #2bc0ac; }
+  .select .options .option {
+    padding: .375rem .75rem;
+    display: none; }
+    .select .options .option:first-child {
+      display: block !important; }
+
+.tab-root {
+  /* tab */
+  /* content */ }
+  .tab-root .tab {
+    display: flex;
+    letter-spacing: 1px;
+    position: relative;
+    border-bottom: 2px solid #ccc; }
+    .tab-root .tab .items .item {
+      display: inline-block;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #000;
+      padding: 1rem 2.3rem;
+      position: relative; }
+      .tab-root .tab .items .item:first-child {
+        padding-left: 0; }
+      .tab-root .tab .items .item:last-child {
+        padding-right: 0; }
+      .tab-root .tab .items .item:hover, .tab-root .tab .items .item:focus, .tab-root .tab .items .item:active, .tab-root .tab .items .item.active {
+        cursor: pointer; }
+    .tab-root .tab .after {
+      width: auto;
+      height: 2px;
+      position: absolute;
+      bottom: -2px;
+      display: inline-block;
+      background-color: #2bc0ac; }
+  .tab-root .content .tab-items {
+    display: none; }
+    .tab-root .content .tab-items:first-child {
+      display: block; }
+    .tab-root .content .tab-items .item {
+      padding: 1.5rem 0;
+      border-bottom: 2px solid #eee;
+      overflow: hidden;
+      transition: all 0.15s ease-in-out; }
+      .tab-root .content .tab-items .item:hover, .tab-root .content .tab-items .item:focus, .tab-root .content .tab-items .item:active, .tab-root .content .tab-items .item.active {
+        cursor: pointer;
+        background-color: rgba(43, 192, 172, 0.05); }
+
+/* 其他类型 */
+.tab-vertical .tab {
+  border-bottom: none;
+  border-left: 2px solid transparent;
+  padding: 1rem 0; }
+  .tab-vertical .tab .items .item {
+    width: 100%;
+    font-size: 0.875rem;
+    font-weight: normal;
+    padding: 0.5rem 1rem; }
+    .tab-vertical .tab .items .item:first-child {
+      padding: 0.5rem 1rem; }
+  .tab-vertical .tab .after {
+    width: 2px;
+    bottom: auto;
+    left: -2px;
+    top: 0; }
+
+.tag {
+  font-size: 0.625rem;
+  display: inline-block;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  padding: 0.15rem 1rem;
+  margin: 0 0.2rem; }
+  .tag:first-child {
+    margin-left: 0; }
+  .tag.tag-dark {
+    border-color: #333;
+    color: #333; }
+  .tag.tag-light-blue {
+    border-color: #2bc0ac;
+    color: #2bc0ac; }
+  .tag.tag-pick {
+    border-color: #cc91a9;
+    color: #cc91a9; }
+
+.topbar {
+  height: 68px;
+  min-height: 68px;
+  background-color: #2bc0ac; }
+  .topbar .container {
+    max-width: 1100px; }
+    .topbar .container .logo {
+      height: 28px; }
+    .topbar .container .nav a {
+      color: #fff;
+      font-size: 0.875rem;
+      letter-spacing: 2px;
+      padding: 0.5rem 1rem; }
+    .topbar .container .nav:after {
+      height: 2px;
+      position: absolute;
+      bottom: 0; }
+    .topbar .container .btn {
+      font-size: 0.875rem;
+      padding: 0.3rem 2rem;
+      outline: none;
+      box-shadow: none; }
+      .topbar .container .btn.creation {
+        color: #2bc0ac !important; }
+      .topbar .container .btn.btn-login {
+        background-color: #2bc0ac;
+        border: 2px solid #fff; }
+
+.pagination .item {
+  padding: 0.5rem;
+  background-color: #fff;
+  color: #999;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.25rem;
+  border-radius: 5px;
+  transition: all 0.15s ease-in-out; }
+  .pagination .item:hover, .pagination .item:focus, .pagination .item:active, .pagination .item .active {
+    color: #fff;
+    background-color: #2bc0ac; }
+.pagination .lists .item {
+  display: flex; }
+
+/*# sourceMappingURL=front.css.map */

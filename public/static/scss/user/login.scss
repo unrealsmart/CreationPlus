@@ -1,0 +1,53 @@
+
+body {
+    background-color: #f0f0f0;
+}
+
+@import "../components/tab";
+.tab-root {
+    & .tab {
+        & .item {
+            font-size: 1.2rem;
+            padding: 0.5rem;
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+.login-root {
+    height: 100vh;
+    & .container {
+        width: 400px;
+        min-width: 320px;
+        margin-bottom: 5%;
+        padding: 5rem 5rem 6rem;
+        & .logo {
+            & img {
+                height: 38px;
+            }
+        }
+        a {
+            color: #333;
+        }
+        /* login button */
+        .btn.submit {
+            background-color: #999;
+            letter-spacing: 3px;
+            font-size: 0.875rem;
+        }
+        /**/
+        & .clause {
+            font-size: 0.625rem;
+            color: #aaa;
+        }
+        & .ask {
+            font-size: 0.625rem;
+            color: #999;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+.topbar {
+    height: $header-height + px;
+    min-height: $header-height + px;
+    background-color: #2bc0ac;
+    & .container {
+        max-width: $max-width;
+        & .logo {
+            height: $header-height - 40 + px;
+        }
+        & .nav {
+            & a {
+                color: #fff;
+                font-size: 0.875rem;
+                letter-spacing: 2px;
+                padding: 0.5rem 1rem;
+            }
+            &:after {
+                height: 2px;
+                position: absolute;
+                bottom: 0;
+            }
+        }
+        & .btn {
+            font-size: 0.875rem;
+            padding: 0.3rem 2rem;
+            outline: none;
+            box-shadow: none;
+            &.creation {
+                color: #2bc0ac !important;
+            }
+            &.btn-login {
+                background-color: #2bc0ac;
+                border: 2px solid #fff;
+            }
+        }
+    }
+}

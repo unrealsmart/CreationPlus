@@ -1,0 +1,30 @@
+
+.guide-page {
+    & .view {
+        background-image: url('/static/images/bg.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        & .cover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        & .container {
+            max-width: $max-width;
+            height: $header-height + px;
+            min-height: $header-height + px;
+            & img {
+                height: $header-height - 40 + px;
+            }
+        }
+        & .cover-top {
+            margin-top: 3rem;
+            font-size: 1.85rem;
+            font-weight: normal;
+            letter-spacing: 3px;
+        }
+        & .cover-bottom {
+            padding: 0.5rem 2rem;
+            margin-top: 5rem;
+            margin-bottom: 20%;
+        }
+    }
+}

@@ -1,0 +1,208 @@
+
+.main {
+    & a {
+        color: #333;
+    }
+    font-size: 0.875rem;
+    max-width: $max-width;
+
+    & .navigation {
+        min-width: $nav-width;
+        & a {
+            display: inline-block;
+            padding: 0.55rem 1rem;
+            text-align: center;
+            width: 100%;
+            &:hover, &:focus, &:active, &.active {
+                color: #fff;
+                background-color: #2bc0ac;
+            }
+        }
+    }
+
+    & .content-root {
+        width: $max-width - (15 * 2) - $nav-width - $info-width;
+        /*  content - swiper */
+        & .swiper {
+            height: 200px;
+            overflow: hidden;
+            & .swiper-cover {
+                & .swiper-slide {
+                    display: block;
+                    width: 555.2px;
+                    background-color: #fff;
+                }
+            }
+            & .thumbnail {
+                width: 75px;
+                color: #fff;
+                & .item {
+                    width: 75px;
+                    text-align: center;
+                    padding: 0.567rem;
+                    border-bottom: 1px solid #ccc;
+                    background-color: #999;
+                    position: relative;
+                    z-index: 7;
+                    &.active {
+                        background-color: #2bc0ac;
+                        &:before {
+                            width: 0;
+                            height: 0;
+                            display: block;
+                            content: '';
+                            position: absolute;
+                            left: -7px;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
+                            border-width: 7px;
+                            border-style: solid;
+                            border-color: transparent #2bc0ac transparent transparent;
+                        }
+                    }
+                    &:hover, &:active, &:focus {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        /* tab rewrite */
+        & .content {
+            & .tab-items {
+                & .item {
+                    & .cover {
+                        width: 259px;
+                    }
+                    & .detail {
+                        & .title {
+                            color: #000;
+                            font-size: 1.1rem;
+                            letter-spacing: 1px;
+                        }
+                        & .tags {
+                            margin: 0.25rem 0;
+                        }
+                        & .info {
+                            color: #666;
+                            font-size: 0.875rem;
+                            height: 42px;
+                            margin: 0.25rem 0;
+                            padding-right: 1.5rem;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                    & .author-datetime {
+                        color: #999;
+                        font-size: 0.8125rem;
+                        & img {
+                            width: 22px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    & .info {
+        width: 300px;
+        /* 搜索 */
+        & .search {
+            & .form-control {
+                color: #333;
+                border: none;
+                background-color: #efefef;
+                padding: 0.5rem 1rem;
+            }
+            & .btn {
+                font-size: 0.875rem;
+                border-left: none;
+                letter-spacing: 2px;
+                padding: 0.5rem 1.5rem;
+            }
+        }
+        /* 用户 */
+        & .user-info {
+            height: 200px;
+            background-color: #eee;
+            & .detail {
+                border-radius: 3px;
+                & .logout {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    font-size: 0.625rem;
+                    color: #ccc;
+                }
+                & .user-head {
+                    & img {
+                        width: 50px;
+                    }
+                }
+                & .creation {
+                    & .title {
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                    }
+                    & .sub-title {
+                        font-size: 0.625rem;
+                        color: #999;
+                    }
+                }
+            }
+        }
+        /* 榜单 */
+        & .hot-list {
+            & .items {
+                & .item {
+                    padding: 1.2rem 0;
+                    font-size: 1rem;
+                    & img {
+                        width: 24px;
+                    }
+                }
+            }
+        }
+        /* 推荐 & 强推 */
+        & .push {
+            & .items {
+                & .item {
+                    font-size: 0.625rem;
+                    margin: 0.5rem 0;
+                    padding-bottom: 0.5rem;
+                    border-bottom: 1px solid #ddd;
+                    & .item-content {
+                        background-color: #ccc;
+                        & span {
+                            color: #666;
+                            padding: 0.15rem 0.25rem;
+                        }
+                        & .col {
+                            padding: 0.15rem 0.25rem;
+                            background-color: #ddd;
+                        }
+                    }
+                }
+            }
+        }
+        /* 公共：标题 */
+        & .hot-list, & .push {
+            background-color: #eee;
+            border-top: 2px solid #2bc0ac;
+        }
+        & .title {
+            font-weight: 500;
+            font-size: 1rem;
+            color: #000;
+            letter-spacing: 1px;
+            & .number {
+                font-size: 1.1rem;
+                letter-spacing: 1px;
+            }
+        }
+    }
+}

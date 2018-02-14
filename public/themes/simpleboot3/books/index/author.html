@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+    <meta name="description" content="{$site_info.site_seo_description|default=''}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>作者 - {$site_info.site_name|default=''}</title>
+    <link rel="icon" href="__TMPL__/public/assets/images/favicon.png" type="image/png">
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//at.alicdn.com/t/font_568756_rtcqow4je58hyqfr.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/index.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/author.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="app">
+        <include file="public/topbar" />
+        <!--filter-->
+        <div class="filter-root mb-3 bg-white">
+            <div class="container h-100 d-flex align-items-center justify-content-between">
+                <div class="filter d-flex align-items-center">
+                    <span class="mr-3">筛选：</span>
+                    <div class="selects">
+                        <div class="selects-value d-flex align-items-center">
+                            <span class="value h-100">推荐作家</span>
+                            <i class="iconfont icon-xialajiantou"></i>
+                        </div>
+                        <div class="option">推荐作家</div>
+                        <div class="option">热门作家</div>
+                        <div class="option">实力作家</div>
+                    </div>
+                    <div class="selects">
+                        <div class="selects-value d-flex align-items-center">
+                            <span class="value h-100">不限分类</span>
+                            <i class="iconfont icon-xialajiantou"></i>
+                        </div>
+                        <div class="option">小说</div>
+                        <div class="option">散文</div>
+                        <div class="option">武侠</div>
+                    </div>
+                    <div class="selects">
+                        <div class="selects-value d-flex align-items-center">
+                            <span class="value h-100">不限城市</span>
+                            <i class="iconfont icon-xialajiantou"></i>
+                        </div>
+                        <div class="option">北京</div>
+                        <div class="option">上海</div>
+                        <div class="option">广州</div>
+                        <div class="option">郑州</div>
+                    </div>
+                </div>
+                <div class="orders d-flex align-items-center">
+                    <span class="mr-3">排序：</span>
+                    <div class="selects">
+                        <div class="selects-value d-flex align-items-center">
+                            <span class="value h-100">推荐作家</span>
+                            <i class="iconfont icon-xialajiantou"></i>
+                        </div>
+                        <div class="option">推荐作家</div>
+                        <div class="option">热门作家</div>
+                        <div class="option">实力作家</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--container-->
+        <div class="container">
+            <!--author-->
+            <div class="author-count mb-3">
+                共<span>588777</span>位作家
+            </div>
+            <!--items-->
+            <div class="items bg-white">
+                <div class="item d-flex">
+                    <div class="head">
+                        <img src="/static/images/user-head.png" alt="" />
+                    </div>
+                    <div class="info">
+                        <div class="name">作者名字1</div>
+                        <div class="type mb-2">小说</div>
+                        <div class="counts mb-3 d-flex align-items-center">
+                            <div class="item">
+                                <span>创作</span>
+                                <span class="number">2555</span>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="item">
+                                <span>粉丝</span>
+                                <span class="number">688774</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-follow text-white">关注</button>
+                    </div>
+                    <div class="imgs d-flex flex-wrap">
+                        <div class="item">
+                            <img src="/static/images/author-cover.png" alt="" />
+                        </div>
+                        <div class="item">
+                            <img src="/static/images/author-cover.png" alt="" />
+                        </div>
+                        <div class="item">
+                            <img src="/static/images/author-cover.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="more align-self-center ml-auto">
+                        <img src="/static/images/more.png" alt="" />
+                    </div>
+                </div>
+                <div class="item d-flex">
+                    <div class="head">
+                        <img src="/static/images/user-head.png" alt="" />
+                    </div>
+                    <div class="info">
+                        <div class="name">作者名字1</div>
+                        <div class="type mb-2">小说</div>
+                        <div class="counts mb-3 d-flex align-items-center">
+                            <div class="item">
+                                <span>创作</span>
+                                <span class="number">2555</span>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="item">
+                                <span>粉丝</span>
+                                <span class="number">688774</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-follow text-white">关注</button>
+                    </div>
+                    <div class="imgs d-flex flex-wrap">
+                        <div class="item">
+                            <img src="/static/images/author-cover.png" alt="" />
+                        </div>
+                        <div class="item">
+                            <img src="/static/images/author-cover.png" alt="" />
+                        </div>
+                        <div class="item">
+                            <img src="/static/images/author-cover.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="more align-self-center ml-auto">
+                        <img src="/static/images/more.png" alt="" />
+                    </div>
+                </div>
+                <div class="item d-flex">
+                    <div class="head">
+                        <img src="/static/images/user-head.png" alt="" />
+                    </div>
+                    <div class="info">
+                        <div class="name">作者名字1</div>
+                        <div class="type mb-2">小说</div>
+                        <div class="counts mb-3 d-flex align-items-center">
+                            <div class="item">
+                                <span>创作</span>
+                                <span class="number">2555</span>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="item">
+                                <span>粉丝</span>
+                                <span class="number">688774</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-follow text-white">关注</button>
+                    </div>
+                    <div class="imgs d-flex flex-wrap">
+                        <div class="item">
+                            <img src="/static/images/author-cover.png" alt="" />
+                        </div>
+                        <div class="item">
+                            <img src="/static/images/author-cover.png" alt="" />
+                        </div>
+                        <div class="item">
+                            <img src="/static/images/author-cover.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="more align-self-center ml-auto">
+                        <img src="/static/images/more.png" alt="" />
+                    </div>
+                </div>
+                <div class="item d-flex">
+                    <div class="head">
+                        <img src="/static/images/user-head.png" alt="" />
+                    </div>
+                    <div class="info">
+                        <div class="name">作者名字1</div>
+                        <div class="type mb-2">小说</div>
+                        <div class="counts mb-3 d-flex align-items-center">
+                            <div class="item">
+                                <span>创作</span>
+                                <span class="number">2555</span>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="item">
+                                <span>粉丝</span>
+                                <span class="number">688774</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-follow text-white">关注</button>
+                    </div>
+                    <div class="imgs d-flex flex-wrap">
+                        <div class="item">
+                            <img src="/static/images/author-cover.png" alt="" />
+                        </div>
+                        <div class="item">
+                            <img src="/static/images/author-cover.png" alt="" />
+                        </div>
+                        <div class="item">
+                            <img src="/static/images/author-cover.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="more align-self-center ml-auto">
+                        <img src="/static/images/more.png" alt="" />
+                    </div>
+                </div>
+                <div class="item d-flex">
+                    <div class="head">
+                        <img src="/static/images/user-head.png" alt="" />
+                    </div>
+                    <div class="info">
+                        <div class="name">作者名字1</div>
+                        <div class="type mb-2">小说</div>
+                        <div class="counts mb-3 d-flex align-items-center">
+                            <div class="item">
+                                <span>创作</span>
+                                <span class="number">2555</span>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="item">
+                                <span>粉丝</span>
+                                <span class="number">688774</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-follow text-white">关注</button>
+                    </div>
+                    <div class="imgs d-flex flex-wrap">
+                        <div class="item">
+                            <img src="/static/images/author-cover.png" alt="" />
+                        </div>
+                        <div class="item">
+                            <img src="/static/images/author-cover.png" alt="" />
+                        </div>
+                        <div class="item">
+                            <img src="/static/images/author-cover.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="more align-self-center ml-auto">
+                        <img src="/static/images/more.png" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--pagination--->
+        <include file="public/pagination" />
+    </div>
+</body>
+</html>

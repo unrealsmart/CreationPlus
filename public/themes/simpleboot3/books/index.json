@@ -1,6 +1,0 @@
-{
-  "name": "书库",
-  "action": "books/Index/index",
-  "description": "书库首页模板文件",
-  "more": {}
-}

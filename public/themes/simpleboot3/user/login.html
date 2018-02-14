@@ -1,54 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title></title>
-<meta name="keywords" content="" />
-<meta name="description" content="">
-<include file="public@head" />
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+    <meta name="description" content="{$site_info.site_seo_description|default=''}">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="__TMPL__/public/assets/images/favicon.png" type="image/png">
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/Swiper/4.1.0/css/swiper.min.css" rel="stylesheet">
+    <link href="/static/css/index.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/login.css" rel="stylesheet" type="text/css">
 </head>
+<body>
+    <div class="login-root d-flex align-items-center justify-content-center">
+        <div class="container bg-white">
+            <!--logo-->
+            <div class="logo mb-5 d-flex align-items-center justify-content-center">
+                <img src="/static/images/logo.png" alt="LOGO" />
+            </div>
+            <!--tab-->
+            <div class="tab-root">
+                <div class="tab justify-content-between">
+                    <a class="item active">帐号登录</a>
+                    <a class="item" style="padding-right: 0;">扫码登录</a>
+                    <div class="after"></div>
+                </div>
+                <div class="content pt-4">
+                    <div class="tab-items">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="username" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="username" value="" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-items">
+                        22
+                    </div>
+                </div>
+            </div>
+            <!--form button-->
+            <button class="btn submit text-light w-100 rounded-0 pt-2 pb-2">登录</button>
+            <div class="clause mt-3 text-center">
+                点击注册表示您已阅读并同意 <a href="/clause.html">服务条款</a>
+            </div>
+            <div class="ask text-center">
+                已有帐号？ <a href="/user/login.html">登录</a>
+            </div>
 
-<body class="body-white">
-	<include file="public@nav" />
+        </div>
+    </div>
+    <div class="javascript">
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                /* tab */
+                /* tab-root item initial active */
+                $('.tab-root .tab .after').css({
+                    width: $('.tab-root .tab .item.active').width(),
+                    left: parseInt($('.tab-root .tab .item.active').css('padding-left')),
+                });
 
-	<div class="container tc-main">
-		<div class="row">
-			<div class="col-md-4 col-md-offset-4">
-				<h2 class="text-center">用户登录</h2>
-				<form class="js-ajax-form" action="{:url('user/login/doLogin')}" method="post">
-					<div class="form-group">
-						<input type="text" id="input_username" name="username" placeholder="手机号/邮箱/用户名" class="form-control">
-					</div>
+                /* tab root item switch event */
+                $('.tab-root .tab .item').on('touchstart mouseover', function(e) {
+                    if (!$(e.target).hasClass('active')) {
+                        $('.tab-root .tab .after').stop().animate({
+                            width: $(this).width(),
+                            left: $(this)[0].offsetLeft + parseInt($(this).css('padding-left'))
+                        }, 300);
+                    }
+                });
+                $('.tab-root .tab .item').on('touchend mouseout', function(e) {
+                    var $active = $('.tab-root .tab .item.active');
+                    $('.tab-root .tab .after').stop().animate({
+                        width: $active.width(),
+                        left: $active[0].offsetLeft + parseInt($active.css('padding-left'))
+                    }, 300);
+                });
 
-					<div class="form-group">
-						<input type="password" id="input_password" name="password" placeholder="密码" class="form-control">
-					</div>
+                // tab.item switch to tab-container
+                tabSwitch = ($this) => {
+                    $('.tab-root .tab .item').removeClass('active');
+                    $this.addClass('active');
+                    $('.tab-root .content .tab-items').css('display', 'none');
+                    $('.tab-root .content .tab-items').eq($this.index()).css('display', 'block');
+                }
 
-					<div class="form-group">
-						<div style="position: relative;">
-							<input type="text" name="captcha" placeholder="验证码" class="form-control captcha" style="width: 170px;float: left;margin-right: 30px">
-							<captcha height="38" width="160" font-size="20"/>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<input type="hidden" name="redirect" value="">
-						<button class="btn btn-primary btn-block js-ajax-submit" type="submit" style="margin-left: 0px">确定</button>
-					</div>
-
-					<div class="form-group" style="text-align: center;">
-						<ul class="list-inline">
-							<li><a href="{:cmf_url('user/Register/index')}">现在注册</a></li>
-							<li><a href="{:cmf_url('user/Login/findPassword')}">忘记密码</a></li>
-						</ul>
-					</div>
-				</form>
-			</div>
-		</div>
-
-
-	</div>
-	<!-- /container -->
-
-	<include file="public@scripts" />
+                $('.tab-root .tab .item').on('touch click', function(e) {
+                    tabSwitch($(this));
+                });
+            });
+        </script>
+    </div>
 </body>
 </html>

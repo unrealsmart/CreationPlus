@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+    <meta name="description" content="{$site_info.site_seo_description|default=''}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>活动 - {$site_info.site_name|default=''}</title>
+    <include file="public/links" />
+    <link href="/static/css/activity.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <include file="public/topbar" />
+    <!--tab-->
+    <div class="tab-root container-full">
+        <!--tab-->
+        <div class="tab bg-white mb-4 d-flex align-items-center justify-content-center">
+            <div>
+            <div class="items">
+                <a class="item active">最新活动</a>
+                <a class="item">创作大赛</a>
+                <a class="item">线上活动</a>
+                <a class="item">线下活动</a>
+            </div>
+            <div class="after"></div>
+        </div>
+        </div>
+        <!--tab container-->
+        <div class="content container mb-3">
+            <div class="tab-items">
+                <div class="row">
+                    <div class="col-6 col-item">
+                        <div class="rounded" style="overflow: hidden;">
+                            <div class="cover">
+                                <img src="/static/images/activity-cover.png" alt="" class="w-100" />
+                                <span class="label position-absolute">线上活动</span>
+                            </div>
+                            <div class="info bg-white">
+                                <div class="p-3">
+                                    <div class="title mb-2">
+                                        <a href="#">2017年终盘点</a>
+                                    </div>
+                                    <div class="datetime">2018-01-23 ~ 2018-01-01</div>
+                                </div>
+                                <div class="counts d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <i class="iconfont icon-browse"></i>
+                                        <span>3天前</span>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <i class="iconfont icon-time"></i>
+                                        <span>166666</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-item">
+                        <div class="rounded" style="overflow: hidden;">
+                            <div class="cover">
+                                <img src="/static/images/activity-cover.png" alt="" class="w-100" />
+                                <span class="label position-absolute">线上活动</span>
+                            </div>
+                            <div class="info bg-white">
+                                <div class="p-3">
+                                    <div class="title mb-2">
+                                        <a href="#">2017年终盘点</a>
+                                    </div>
+                                    <div class="datetime">2018-01-23 ~ 2018-01-01</div>
+                                </div>
+                                <div class="counts d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <i class="iconfont icon-browse"></i>
+                                        <span>3天前</span>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <i class="iconfont icon-time"></i>
+                                        <span>166666</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-item">
+                        <div class="rounded" style="overflow: hidden;">
+                            <div class="cover">
+                                <img src="/static/images/activity-cover.png" alt="" class="w-100" />
+                                <span class="label position-absolute">线上活动</span>
+                            </div>
+                            <div class="info bg-white">
+                                <div class="p-3">
+                                    <div class="title mb-2">
+                                        <a href="#">2017年终盘点</a>
+                                    </div>
+                                    <div class="datetime">2018-01-23 ~ 2018-01-01</div>
+                                </div>
+                                <div class="counts d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <i class="iconfont icon-browse"></i>
+                                        <span>3天前</span>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <i class="iconfont icon-time"></i>
+                                        <span>166666</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-items">
+                2
+            </div>
+            <div class="tab-items">
+                3
+            </div>
+        </div>
+    </div>
+    <!---->
+    <include file="public/pagination" />
+    <!--javascript-->
+    <div class="javascript">
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <include file="public/scripts-tab" />
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+
+.tab-root {
+    & .content {
+        & .tab-items {
+            & .form-control {
+                font-size: 0.875rem;
+                color: #ccc;
+            }
+            & .item-col {
+                padding: 1.5rem 0.5rem;
+                & .title {
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    padding: 1.5rem 0 3rem;
+                    & .checkbox {
+                        width: 16px;
+                        height: 16px;
+                        border: 1px solid #ccc;
+                        display: inline-block;
+                        border-radius: 50%;
+                        &.active {
+                            border-width: 3px;
+                            border-color: #2bc0ac;
+                        }
+                    }
+                }
+                & .desc {
+                    font-size: 0.875rem;
+                    color: #999;
+                }
+            }
+        }
+    }
+}
+
+
+.form-control {
+    background-color: #f9f9f9;
+    &:hover, &:focus, &:active, &.active {
+        background-color: #f9f9f9;
+    }
+}
+
+.prompt {
+    font-size: 0.875rem;
+    color: #999;
+}
+
+
+.cover-body {
+    width: 180px;
+    height: 220px;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 3px;
+    color: #ccc;
+    font-size: 0.875rem;
+    background-color: #fafafa;
+    transition: all .15s ease-in-out;
+    &:hover {
+        cursor: pointer;
+        background-color: #f9f9f9;
+    }
+    & .iconfont {
+        font-size: 2rem;
+        color: #2bc0ac;
+    }
+}

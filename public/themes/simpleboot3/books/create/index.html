@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+    <meta name="description" content="{$site_info.site_seo_description|default=''}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>创作 - {$site_info.site_name|default=''}</title>
+    <include file="public/links" />
+    <link href="/static/css/create/index.css" rel="stylesheet" type="text/css">
+    <!--<link href="/static/css/create/index.css" rel="stylesheet" type="text/css">-->
+    <link href="/static/js/webuploader/webuploader.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <include file="public/topbar" />
+    <div class="container">
+        <div class="tab-root tab-vertical container-full mt-5 d-flex flex-row">
+            <!--tab-->
+            <div class="tab bg-white mb-4 d-flex align-items-center justify-content-center align-self-start">
+                <div class="position-relative">
+                    <div class="items d-flex flex-wrap">
+                        <a class="item active">发布作品</a>
+                        <a class="item">上传作品</a>
+                    </div>
+                    <div class="after"></div>
+                </div>
+            </div>
+            <!--tab container-->
+            <div class="content container mb-3">
+                <div class="tab-items">
+                    <div class="card rounded border-0 mb-3">
+                        <div class="card-header bg-white pl-4">创作类型</div>
+                        <div class="card-body row d-flex flex-row justify-content-center">
+                            <div class="col-6 item-col d-flex justify-content-center">
+                                <div class="d-flex flex-column flex-wrap justify-content-center">
+                                    <div class="title text-center d-flex flex-row align-items-center justify-content-center">
+                                        <div class="checkbox active"></div>
+                                        <div class="name ml-3">独创</div>
+                                    </div>
+                                    <div class="desc">
+                                        由作者发起的独立文章类型<br>不能和其他作家共同创作。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 item-col d-flex justify-content-center">
+                                <div class="d-flex flex-column flex-wrap justify-content-center">
+                                    <div class="title text-center d-flex flex-row align-items-center justify-content-center">
+                                        <div class="checkbox"></div>
+                                        <div class="name ml-3">共创</div>
+                                    </div>
+                                    <div class="desc text-center pl-4">
+                                        由作者发起的共创文章类型<br>能够其他作家共同创作。<br>
+                                        您拥有本书的所有权；但不能更换到独创类型。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card rounded border-0 mb-3">
+                        <div class="card-header bg-white pl-4">作品信息</div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="作品名称" />
+                            </div>
+                            <div class="form-group d-flex flex-row row no-gutters">
+                                <div class="select col-2 mr-3 d-flex flex-row align-items-center justify-content-between">
+                                    <div class="options w-100">
+                                        <div class="option">一二三</div>
+                                        <div class="option">一二三</div>
+                                        <div class="option">一二三</div>
+                                    </div>
+                                    <i class="iconfont icon-xialajiantou position-absolute mr-2" style="right: 0;"></i>
+                                    <input type="hidden" name="" value="">
+                                </div>
+                                <div class="select col-2 mr-3 d-flex flex-row align-items-center justify-content-between">
+                                    <div class="options w-100">
+                                        <div class="option">一二三</div>
+                                        <div class="option">一二三</div>
+                                        <div class="option">一二三</div>
+                                    </div>
+                                    <i class="iconfont icon-xialajiantou position-absolute mr-2" style="right: 0;"></i>
+                                    <input type="hidden" name="" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="content" class="form-control" style="height: 90px; min-height: 90px;" placeholder="作品简介"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="content" class="form-control" style="height: 90px; min-height: 90px;" placeholder="创作初心"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card rounded border-0 mb-3">
+                        <div class="card-header bg-white pl-4">上传封面</div>
+                        <div class="card-body row">
+                            <div class="cover-uploader col-auto">
+                                <div class="cover-list"></div>
+                                <div class="cover-body area d-flex flex-column flex-wrap align-items-center justify-content-center">
+                                    <i class="iconfont icon-jia mb-2"></i>
+                                    <div id="picker d-block w-100" class="picker">点击添加图片</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card rounded border-0 mb-3">
+                        <div class="card-header bg-white pl-4">添加标签</div>
+                        <div class="card-body row">
+                            <div class="form-group col-5 mb-0 d-flex align-items-center">
+                                <input type="text" name="tag" class="form-control" placeholder="作品标签" />
+                            </div>
+                            <div class="col-6 prompt d-flex align-items-center">
+                                贴标签(最多5个)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-group d-flex align-items-center justify-content-center">
+                        <button class="">立即发布</button>
+                        <button>预览</button>
+                    </div>
+                </div>
+                <div class="tab-items">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--javascript-->
+    <div class="javascript">
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <include file="public/scripts-tab" />
+        <script type="text/javascript" src="/static/js/webuploader/webuploader.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+
+                // 检测浏览器
+                if ( !WebUploader.Uploader.support() ) {
+                    alert( 'Web Uploader 不支持您的浏览器！如果你使用的是IE浏览器，请尝试升级 flash 播放器');
+                    throw new Error( 'WebUploader does not support the browser you are using.' );
+                }
+
+                //
+                var wu,
+                    // 封面上传容器
+                    $cover = $('.cover-uploader'),
+                    // 上传区域
+                    $dnd = $cover.find('.area'),
+                    // 上传按钮
+                    $picker = $cover.find('.picker'),
+                    //
+
+                    // voider
+                    $voider
+                ;
+
+                wu = WebUploader.create({
+                    disableGlobalDnd: true,
+                    paste: document.body,
+                    pick: {
+
+                    },
+                    accept: {
+                        title: 'images',
+                        extensions: 'jpg,jpeg,bmp,png',
+                        mimeTypes: 'image/*',
+                    },
+                    thumb: {
+                        width: 180,
+                        height: 220,
+                        // 图片质量
+                        quality: 70,
+                        // 是否允许放大，如果想要生成小图的时候不失真，此选项应该设置为false.
+                        allowMagnify: false,
+                        // 是否允许裁剪
+                        crop: true,
+                        // 为空的话则保留原有图片格式。
+                        // 否则强制转换成指定的类型。
+                        type: 'image/jpeg',
+                    },
+                });
+
+            });
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<script type="text/javascript">
+    $(function() {
+        /* tab */
+        /* tab-root item initial active */
+        var vertical = $('.tab-root').hasClass('tab-vertical');
+        var $after = $('.tab-root .tab .after');
+        var $itemActive = $('.tab-root .tab .items .item.active');
+
+        // items
+        var $items = $('.tab-root .tab .items');
+        // item
+        var $item = $items.find('.item');
+        // tab items
+        var $tabitems = $('.tab-root .content .tab-items');
+
+
+        // 初始化下划线
+        if (vertical) {
+            var options = {
+                height: $itemActive.height(),
+                top: $itemActive.css('padding-top')
+            }
+            $after.css(options);
+        } else {
+            var options = {
+                width: $itemActive.width(),
+                left: 'auto',
+            }
+            $after.css(options);
+        }
+
+
+        /* tab root item switch event */
+        $item.on('touchstart mouseover', function(e) {
+            if (!$(e.target).hasClass('active')) {
+                var options = {};
+                if (vertical) {
+                    options = {
+                        height: $(this).height(),
+                        top: $(this)[0].offsetTop + parseInt($(this).css('padding-top'))
+                    }
+                } else {
+                    options = {
+                        width: $(this).width(),
+                        left: $(this)[0].offsetLeft + parseInt($(this).css('padding-left'))
+                    }
+                }
+                $('.tab-root .tab .after').stop().animate(options, 300);
+            }
+        });
+        $item.on('touchend mouseout', function(e) {
+            var $active = $('.tab-root .tab .item.active');
+            var options = {};
+            if (vertical) {
+                options = {
+                    height: $active.height(),
+                    top: $active[0].offsetTop + parseInt($active.css('padding-top'))
+                }
+            } else {
+                options = {
+                    width: $active.width(),
+                    left: $active[0].offsetLeft + parseInt($active.css('padding-left'))
+                }
+            }
+            $('.tab-root .tab .after').stop().animate(options, 300);
+        });
+
+        // tab.item switch to tab-container
+        tabSwitch = ($this) => {
+            $('.tab-root .tab .items .item').removeClass('active');
+            $this.addClass('active');
+            $tabitems.css('display', 'none');
+            $tabitems.eq($this.index()).css('display', 'block');
+        }
+
+        $item.on('touch click', function(e) {
+            tabSwitch($(this));
+        });
+    });
+</script>

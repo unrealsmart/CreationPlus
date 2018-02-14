@@ -1,0 +1,51 @@
+
+@import "../variables";
+@import "../components/tab";
+
+.tab-root {
+    & .tab {
+        & .item {
+            font-size: 0.9375rem;
+            font-weight: normal;
+        }
+    }
+    & .content {
+        max-width: $max-width;
+        font-size: 1rem;
+        & .tab-items {
+            & .col-item {
+                margin-bottom: 2rem;
+                & .cover {
+                    & .label {
+                        color: #fff;
+                        font-size: 0.625rem;
+                        top: 0;
+                        left: 1rem - 1 + px;
+                        padding: 0.75rem 1.2rem;
+                        background-color: #bbb;
+                        border-radius: 0.25rem 0 0;
+                    }
+                }
+                & .info {
+                    font-size: 0.875rem;
+                    & .title {
+                        letter-spacing: 1px;
+                        & a {
+                            color: #000;
+                        }
+                    }
+                    & .datetime {
+                        color: #999;
+                        letter-spacing: 1px;
+                    }
+                    & .counts {
+                        font-size: 0.625rem;
+                        color: #aaa;
+                        padding: 0.5rem 1rem;
+                        border-top: 1px solid #eee;
+                    }
+                }
+            }
+        }
+    }
+}

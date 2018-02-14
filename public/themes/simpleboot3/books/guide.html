@@ -1,16 +1,35 @@
-<div class="guide w-100 h-100">
-    <div class="cover w-100 h-100 d-flex flex-column align-items-center justify-content-between">
-        <div class="container d-flex align-items-center">
-            <div class="logo">
-                <img src="/themes/simpleboot3/books/assets/img/logo-white.png" />
+<!DOCTYPE html>
+<html>
+<head>
+    <title>首页 {$site_info.site_name|default=''}</title>
+    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+    <meta name="description" content="{$site_info.site_seo_description|default=''}">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <include file="public/meta-links" />
+</head>
+<body class="guide-page position-absolute w-100 h-100">
+    <div class="view container-full h-100" style="overflow: hidden">
+        <div class="cover w-100 h-100 d-flex flex-column align-items-center justify-content-between">
+            <div class="container d-flex align-items-center">
+                <div class="logo">
+                    <img src="/static/images/logo-white.png" />
+                </div>
+            </div>
+            <div class="cover-top text-center text-light">
+                来创作+，当创作家
+            </div>
+            <div class="cover-bottom d-flex justify-content-center align-items-center text-center">
+                <a href="/main.html" class="d-block btn btn-sm btn-crate-white text-light ml-3 mr-3">随便看看</a>
+                <a href="/user/login.html" class="d-block btn btn-sm btn-create-blue text-light ml-3 mr-3">作者登录</a>
             </div>
         </div>
-        <div class="cover-top text-center text-light">
-            来创作+，当创作家
-        </div>
-        <div class="cover-bottom d-flex justify-content-center align-items-center text-center">
-            <a href="main.html" class="d-block btn btn-crate-white text-light ml-3 mr-3">随便看看</a>
-            <a href="author/login.html" class="d-block btn btn-create-blue text-light ml-3 mr-3">作者登录</a>
-        </div>
     </div>
-</div>
+    <div class="javascript">
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    </div>
+</body>
+</html>
